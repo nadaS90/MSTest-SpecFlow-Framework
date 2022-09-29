@@ -19,7 +19,7 @@ public class SeleniumDrivers
     public IWebDriver SetUp()
     {
         var firefoxOptions = new FirefoxOptions();
-       // var ideOptions = new EdgeOptions();
+        var ideOptions = new EdgeOptions();
 
         _scenarioContext.Set(driver, "WebDriver");
         driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);

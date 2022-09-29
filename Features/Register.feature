@@ -7,9 +7,5 @@
     And user select gender
     When enter first name and last name
     And user enter email
-        | Email     |
-        | <Email>   |
     And user fills Password fields
-        | Password   |
-        | <Password> | 
     Then user could register successfully
