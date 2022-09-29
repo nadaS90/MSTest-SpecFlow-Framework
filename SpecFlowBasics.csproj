@@ -10,6 +10,7 @@
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\ChromeBrowser - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\Login - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\NonChromeBrowser - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Features\Register - Copy.feature.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -32,12 +33,19 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Features\FollowUs.feature.cs">
+      <DependentUpon>FollowUs.feature</DependentUpon>
+    </Compile>
     <Compile Update="Features\Register.feature.cs">
       <DependentUpon>Register.feature</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
+    <SpecFlowFeatureFiles Update="Features\FollowUs.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
     <SpecFlowFeatureFiles Update="Features\Register.feature">
       <Visible>$(UsingMicrosoftNETSdk)</Visible>
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>

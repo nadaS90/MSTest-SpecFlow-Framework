@@ -1,7 +1,7 @@
 ﻿using OpenQA.Selenium;
 using SpecFlowBasics.Helpers;
 
-namespace SeleniumFrameworkCSharp.pages;
+namespace SpecFlowBasics.Pages;
 
 public class LoginPage : PageBase
 {

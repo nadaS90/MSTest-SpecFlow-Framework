@@ -1,6 +1,4 @@
-﻿using Microsoft.VisualBasic.CompilerServices;
-
-namespace SeleniumFrameworkCSharp.data;
+﻿namespace SpecFlowBasics.data;
 
 public static class Constants
 {

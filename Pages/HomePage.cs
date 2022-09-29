@@ -3,8 +3,7 @@ using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using SpecFlowBasics.Helpers;
 
-
-namespace SeleniumFrameworkCSharp.pages; 
+namespace SpecFlowBasics.Pages; 
 public class HomePage : PageBase
 {
 
@@ -20,6 +19,10 @@ public class HomePage : PageBase
     public const String ChangeCurancyID = "customerCurrency";
     public const String HoverMenuID = "ul[class=\"top-menu notmobile\"] [href=\"/electronics\"]";
     public const String HoverDropDownID = "//a[@href=\"/cell-phones\"]";
+    public const String FaceBookLinkID = "//a[@href=\"http://www.facebook.com/nopCommerce\"]";
+    public const string TwitterLinkID = "//a[@href=\"https://twitter.com/nopCommerce\"]";
+    public const String YouTubeLinkID = "//a[@href=\"http://www.youtube.com/user/nopCommerce\"]";
+
     #endregion
 
     IWebElement RegisterLink => driver.FindElement(By.LinkText(RegisterLinkID));
@@ -27,7 +30,11 @@ public class HomePage : PageBase
    // IWebElement ContactUsLink => driver.FindElement(By.LinkText(ContactUsID));
     IWebElement ChangeCurrency => driver.FindElement(By.Id(ChangeCurancyID));
     public IWebElement HoverMenu => driver.FindElement(By.CssSelector(HoverMenuID));
-   public IWebElement HoverDropDown => driver.FindElement(By.XPath(HoverDropDownID));
+    public IWebElement HoverDropDown => driver.FindElement(By.XPath(HoverDropDownID));
+    IWebElement FaceBook => driver.FindElement(By.XPath(FaceBookLinkID)); 
+    IWebElement Twitter => driver.FindElement(By.XPath(TwitterLinkID)); 
+    IWebElement YouTube => driver.FindElement(By.XPath(YouTubeLinkID));
+    
 
 
 
@@ -67,4 +74,18 @@ public class HomePage : PageBase
          driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
 
     }
+
+     public void UserNavigateToFaceBook()
+     {
+         ClickBtn(FaceBook);
+     }
+
+     public void UserNavigateToTwitter()
+     {
+         ClickBtn(Twitter);
+     }
+     public void UserNavigateToYouTube()
+     {
+         ClickBtn(YouTube);
+     }
 }

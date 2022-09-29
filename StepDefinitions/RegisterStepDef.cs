@@ -1,9 +1,11 @@
 using OpenQA.Selenium;
 using System;
+using Microsoft.VisualBasic;
 using SpecFlowBasics.Helpers;
-using SpecFlowBasics.Hooks;
+using SpecFlowBasics.HooksInitialization;
+using SpecFlowBasics.Pages;
 using TechTalk.SpecFlow;
-using SeleniumFrameworkCSharp.pages;
+
 
 namespace SpecFlowBasics.StepDefinitions
 {
@@ -26,7 +28,7 @@ namespace SpecFlowBasics.StepDefinitions
         [Given(@"user navigates to register page")]
         public void GivenUserNavigatesToRegisterPage()
         { 
-          //  Assert.IsTrue(HomeObject.driver.getCurrentUrl().contains("register"));
+            HomeObject.ClickRegisterLink();
         }
 
         [Given(@"user select gender")]
@@ -42,6 +44,7 @@ namespace SpecFlowBasics.StepDefinitions
         [When(@"enter first name and last name")]
         public void WhenEnterFirstNameAndLastName(String FName, String LName)
         {
+
            // RegisterObject.FirstNameTxtBox.SendKeys(FName, LName);
            /* IWebElement FirstNameTxtBox = SeleniumDrivers.driver.FindElement(By.Id(RegisterPage.FirstNameID));
             IWebElement LastNameTextBox = SeleniumDrivers.driver.FindElement(By.Id(RegisterPage.LastNameID));
@@ -54,7 +57,9 @@ namespace SpecFlowBasics.StepDefinitions
         [When(@"user enter email")]
         public void WhenUserEnterEmail(String Email)
         {
-            IWebElement EmailTextBox = SeleniumDrivers.driver.FindElement(By.Id(RegisterPage.EmailID));
+           // RegisteredEmail = Constants.;
+
+            IWebElement EmailTextBox = Hooks.driver.FindElement(By.Id(RegisterPage.EmailID));
             PageBase.SendTxt(EmailTextBox, Email);
 
             throw new PendingStepException();
@@ -63,8 +68,8 @@ namespace SpecFlowBasics.StepDefinitions
         [When(@"user fills Password fields")]
         public void WhenUserFillsPasswordFields(String Password)
         {
-            IWebElement PasswordTextField = SeleniumDrivers.driver.FindElement(By.Id(RegisterPage.PasswordID));
-            IWebElement ConfirmPasswordTextBox = SeleniumDrivers.driver.FindElement(By.Id(RegisterPage.ConfirmPasswordID));
+            IWebElement PasswordTextField = Hooks.driver.FindElement(By.Id(RegisterPage.PasswordID));
+            IWebElement ConfirmPasswordTextBox = Hooks.driver.FindElement(By.Id(RegisterPage.ConfirmPasswordID));
             PageBase.SendTxt(PasswordTextField, Password);
             PageBase.SendTxt(ConfirmPasswordTextBox, Password);
 
@@ -74,9 +79,9 @@ namespace SpecFlowBasics.StepDefinitions
         [Then(@"user could register successfully")]
         public void ThenUserCouldRegisterSuccessfully()
         {
-            IWebElement RegisterBtn = SeleniumDrivers.driver.FindElement(By.Id(RegisterPage.RegisterBtnID));
+            IWebElement RegisterBtn = Hooks.driver.FindElement(By.Id(RegisterPage.RegisterBtnID));
             PageBase.ClickBtn(RegisterBtn);
-            IWebElement SuccessfulMsg = SeleniumDrivers.driver.FindElement(By.CssSelector(RegisterPage.SuccessMsgID));
+            IWebElement SuccessfulMsg = Hooks.driver.FindElement(By.CssSelector(RegisterPage.SuccessMsgID));
 
             //throw new PendingStepException();
         }
