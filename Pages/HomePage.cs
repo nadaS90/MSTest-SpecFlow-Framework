@@ -15,7 +15,6 @@ public class HomePage : PageBase
     //Locators :
     public const string RegisterLinkID = "Register";
     public const String LoginLinkID = "Log in";
-    //public const String ContactUsID = "Contact us";
     public const String ChangeCurancyID = "customerCurrency";
     public const String HoverMenuID = "ul[class=\"top-menu notmobile\"] [href=\"/electronics\"]";
     public const String HoverDropDownID = "//a[@href=\"/cell-phones\"]";
@@ -27,7 +26,6 @@ public class HomePage : PageBase
 
     IWebElement RegisterLink => driver.FindElement(By.LinkText(RegisterLinkID));
     IWebElement LoginLink => driver.FindElement(By.LinkText(LoginLinkID));
-   // IWebElement ContactUsLink => driver.FindElement(By.LinkText(ContactUsID));
     IWebElement ChangeCurrency => driver.FindElement(By.Id(ChangeCurancyID));
     public IWebElement HoverMenu => driver.FindElement(By.CssSelector(HoverMenuID));
     public IWebElement HoverDropDown => driver.FindElement(By.XPath(HoverDropDownID));
@@ -35,9 +33,6 @@ public class HomePage : PageBase
     IWebElement Twitter => driver.FindElement(By.XPath(TwitterLinkID)); 
     IWebElement YouTube => driver.FindElement(By.XPath(YouTubeLinkID));
     
-
-
-
 
 
 
@@ -52,11 +47,6 @@ public class HomePage : PageBase
          ClickBtn(LoginLink);
      }
 
-    /* public void ClickContactUs()
-     {
-         ClickBtn(ContactUsLink);
-     }*/
-
      public void ClickChangeCurrency()
      {
          Select = new SelectElement(ChangeCurrency);
@@ -66,9 +56,6 @@ public class HomePage : PageBase
      public void HoverMenuAndSelectCategory()
      {
          Actions action = new Actions(driver);
-     //    action.MoveToElement(HoverMenu)
-       //      .MoveToElement(HoverDropDown).
-         //    Click().Build().Perform();
          action.MoveToElement(HoverMenu).Perform();
          action.MoveToElement(HoverDropDown).Click().Perform();
          driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);

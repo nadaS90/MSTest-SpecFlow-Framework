@@ -37,14 +37,26 @@ public class RegisterPage : PageBase
     IWebElement MyAccountLink => driver.FindElement(By.LinkText(MyAccountID));
 
 
-    public void UserRegister(String FName, String LName, String Email, String Password)
+    public void UserSelectGender()
     {
         ClickBtn(GenderRdBtn);
+    }
+    public void UserAddFandLname(String FName, String LName)
+    {
         SendTxt(FirstNameTxtBox, FName);
         SendTxt(LastNameTextBox, LName);
-        SendTxt(EmailTextBox, Email);
+    }
+    public void UserAddPassword(String Password)
+    {
         SendTxt(PasswordTextField, Password);
         SendTxt(ConfirmPasswordTextBox, Password);
+    }
+    public void UserAddEmail(String Email)
+    {
+        SendTxt(EmailTextBox, Email);
+    }
+    public void UserClickRegisterBrn()
+    {
         ClickBtn(RegisterBtn);
     }
 

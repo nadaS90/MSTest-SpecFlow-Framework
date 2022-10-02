@@ -7,7 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <SpecFlowObsoleteCodeBehindFiles Remove="Features\ChangeCurrency - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\ChromeBrowser - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Features\FollowUs - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\Login - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\NonChromeBrowser - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\Register - Copy.feature.cs" />
@@ -29,24 +31,53 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="ScreenShots\" />
     <Folder Include="Support\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Features\FollowUs.feature.cs">
-      <DependentUpon>FollowUs.feature</DependentUpon>
-    </Compile>
     <Compile Update="Features\Register.feature.cs">
       <DependentUpon>Register.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Features\WishList.feature.cs">
+      <DependentUpon>WishList.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Features\HoverCategiries.feature.cs">
+      <DependentUpon>HoverCategiries.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Features\Search.feature.cs">
+      <DependentUpon>Search.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Features\ChangeCurrency.feature.cs">
+      <DependentUpon>ChangeCurrency.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Features\FollowUs.feature.cs">
+      <DependentUpon>FollowUs.feature</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <SpecFlowFeatureFiles Update="Features\FollowUs.feature">
+    <SpecFlowFeatureFiles Update="Features\Register.feature">
       <Visible>$(UsingMicrosoftNETSdk)</Visible>
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>
-    <SpecFlowFeatureFiles Update="Features\Register.feature">
+    <SpecFlowFeatureFiles Update="Features\WishList.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Features\HoverCategiries.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Features\Search.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Features\ChangeCurrency.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Features\FollowUs.feature">
       <Visible>$(UsingMicrosoftNETSdk)</Visible>
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>

@@ -10,14 +10,12 @@ namespace SpecFlowBasics.StepDefinitions
     [Binding]
     public class FollowUsStepDef
     {
-        HomePage _homeObject; 
-        //Hooks HooksObject;
+        HomePage _homeObject;
 
 
         public FollowUsStepDef(IWebDriver driver)
         {
             this._homeObject = new HomePage(Hooks.driver);
-           // this.HooksObject = new Hooks();
         }
 
         [Given(@"user clicks on facebook")]

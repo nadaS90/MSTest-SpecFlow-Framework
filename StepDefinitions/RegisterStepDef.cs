@@ -1,10 +1,12 @@
 using OpenQA.Selenium;
-using System;
-using Microsoft.VisualBasic;
-using SpecFlowBasics.Helpers;
 using SpecFlowBasics.HooksInitialization;
 using SpecFlowBasics.Pages;
+using System;
+using Microsoft.VisualBasic;
 using TechTalk.SpecFlow;
+using SpecFlowBasics.data;
+using static SpecFlowBasics.HooksInitialization.Hooks;
+using Constants = SpecFlowBasics.data.Constants;
 
 
 namespace SpecFlowBasics.StepDefinitions
@@ -12,83 +14,58 @@ namespace SpecFlowBasics.StepDefinitions
     [Binding]
     public class RegisterStepDef
     {
-        HomePage HomeObject;
-        RegisterPage RegisterObject;
-        LoginPage LoginObject;
+        HomePage _homeObject;
+        RegisterPage _registerObject;
+        LoginPage _loginObject;
         static string RegisteredEmail = "";
 
-        private readonly ScenarioContext _scenarioContext;
-
-        public RegisterStepDef(ScenarioContext scenarioContext)
+        public RegisterStepDef(IWebDriver driver)
         {
-            _scenarioContext = scenarioContext;
+            this._homeObject = new HomePage(Hooks.driver);
+            this._registerObject = new RegisterPage(Hooks.driver);
+            this._loginObject = new LoginPage(Hooks.driver);
         }
 
+      //  driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(15);
 
-        [Given(@"user navigates to register page")]
-        public void GivenUserNavigatesToRegisterPage()
-        { 
-            HomeObject.ClickRegisterLink();
+
+        [Given(@"user directed to register page")]
+        public void GivenUserDirectedToRegisterPage()
+        {
+            _homeObject.ClickRegisterLink();
         }
 
-        [Given(@"user select gender")]
-        public void GivenUserSelectGender()
+        [Given(@"user select the gender")]
+        public void GivenUserSelectTheGender()
         {
-            RegisterObject.GenderRdBtn.Click();
-            /*IWebElement GenderRdBtn = SeleniumDrivers.driver.FindElement(By.Id(RegisterPage.GenderFemaleID));
-            PageBase.ClickBtn(GenderRdBtn);
-
-            throw new PendingStepException();*/
+            _registerObject.UserSelectGender();
         }
 
-        [When(@"enter first name and last name")]
-        public void WhenEnterFirstNameAndLastName(String FName, String LName)
+        [When(@"user enter first name and last name")]
+        public void WhenUserEnterFirstNameAndLastName()
         {
-
-           // RegisterObject.FirstNameTxtBox.SendKeys(FName, LName);
-           /* IWebElement FirstNameTxtBox = SeleniumDrivers.driver.FindElement(By.Id(RegisterPage.FirstNameID));
-            IWebElement LastNameTextBox = SeleniumDrivers.driver.FindElement(By.Id(RegisterPage.LastNameID));
-            PageBase.SendTxt(FirstNameTxtBox, FName);
-            PageBase.SendTxt(LastNameTextBox, LName);
-            throw new PendingStepException();*/
+            _registerObject.UserAddFandLname(Constants.FName, Constants.LName);
         }
 
-
-        [When(@"user enter email")]
-        public void WhenUserEnterEmail(String Email)
+        [When(@"user enter valid email")]
+        public void WhenUserEnterValidEmail()
         {
-           // RegisteredEmail = Constants.;
-
-            IWebElement EmailTextBox = Hooks.driver.FindElement(By.Id(RegisterPage.EmailID));
-            PageBase.SendTxt(EmailTextBox, Email);
-
-            throw new PendingStepException();
+            RegisteredEmail = Constants.Email;
+            _registerObject.UserAddEmail(RegisteredEmail);
         }
 
-        [When(@"user fills Password fields")]
-        public void WhenUserFillsPasswordFields(String Password)
+        [When(@"user fills required Password fields")]
+        public void WhenUserFillsRequiredPasswordFields()
         {
-            IWebElement PasswordTextField = Hooks.driver.FindElement(By.Id(RegisterPage.PasswordID));
-            IWebElement ConfirmPasswordTextBox = Hooks.driver.FindElement(By.Id(RegisterPage.ConfirmPasswordID));
-            PageBase.SendTxt(PasswordTextField, Password);
-            PageBase.SendTxt(ConfirmPasswordTextBox, Password);
-
-            throw new PendingStepException();
+            _registerObject.UserAddPassword(Constants.Password);
         }
 
-        [Then(@"user could register successfully")]
-        public void ThenUserCouldRegisterSuccessfully()
+        [Then(@"user register successfully")]
+        public void ThenUserRegisterSuccessfully()
         {
-            IWebElement RegisterBtn = Hooks.driver.FindElement(By.Id(RegisterPage.RegisterBtnID));
-            PageBase.ClickBtn(RegisterBtn);
-            IWebElement SuccessfulMsg = Hooks.driver.FindElement(By.CssSelector(RegisterPage.SuccessMsgID));
-
-            //throw new PendingStepException();
+            _registerObject.UserClickRegisterBrn();
+            Assert.IsTrue(_registerObject.SuccessfulMsg.Text.Contains("Your registration completed"));
         }
 
     }
 }
-
-
-
-

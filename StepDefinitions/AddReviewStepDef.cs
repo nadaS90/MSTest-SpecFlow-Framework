@@ -2,9 +2,7 @@
 
 namespace SpecFlowBasics.StepDefinitions
 {
-    [Binding]
-    public class ChangeCurrencyStepDef
-    {
+
+
     
-    }
 }

@@ -48,7 +48,7 @@ namespace SpecFlowBasics.Features
         public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Login Feature", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Login feature", null, ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -63,7 +63,7 @@ namespace SpecFlowBasics.Features
         public virtual void TestInitialize()
         {
             if (((testRunner.FeatureContext != null) 
-                        && (testRunner.FeatureContext.FeatureInfo.Title != "Login Feature")))
+                        && (testRunner.FeatureContext.FeatureInfo.Title != "Login feature")))
             {
                 global::SpecFlowBasics.Features.LoginFeatureFeature.FeatureSetup(null);
             }
@@ -93,15 +93,17 @@ namespace SpecFlowBasics.Features
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("user could login with valid email and password")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Login Feature")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Login feature")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("smoke")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("smoke")]
         public virtual void UserCouldLoginWithValidEmailAndPassword()
         {
             string[] tagsOfScenario = new string[] {
+                    "smoke",
                     "smoke"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("user could login with valid email and password", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 4
+#line 6
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -121,17 +123,11 @@ namespace SpecFlowBasics.Features
             else
             {
                 this.ScenarioStart();
-#line 5
+#line 7
     testRunner.Given("user go to login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Email",
-                            "Password"});
-                table1.AddRow(new string[] {
-                            "<Browser>",
-                            "<Password>"});
-#line 6
-    testRunner.And("user login with valid email and password", ((string)(null)), table1, "And ");
+#line 8
+    testRunner.And("user login with valid email and password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 9
     testRunner.Then("user login to the system successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

@@ -1,40 +1,45 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SeleniumFrameworkCSharp.pages;
-using SeleniumFrameworkCSharp.tests;
+using SpecFlowBasics.Pages;
 
-namespace SeleniumLearning.tests;
-
-[TestClass]
-
-public class HoverMenuStepDef : TestBase
+namespace SpecFlowBasics.StepDefinitions
 {
-    HomePage HomeObject;
-    ProductDetailsPage ProductObject;
+    [Binding]
 
-    public HoverMenuStepDef()
+    public class HoverMenuStepDef
     {
-        HomeObject = new HomePage(driver);
-        ProductObject = new ProductDetailsPage(driver);
+        HomePage HomeObject;
+        ProductDetailsPage ProductObject;
     }
-
-    [TestMethod]
-    public void UserHoverAndSelect()
-    {
-        HomeObject.HoverMenuAndSelectCategory();
-        Assert.IsTrue(HomeObject.HoverMenu.Text.Contains("Electronics"));
-        Console.WriteLine(HomeObject.HoverMenu.Text);
-        driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
-
-        Console.WriteLine(HomeObject.HoverDropDown.Text);
-
-        Assert.IsTrue(ProductObject.PageTittle.Text.Contains("Cell phones"));
-        Console.WriteLine(ProductObject.PageTittle.Text);
-
-
-    }
-
-
-
-
 }
+/*  public HoverMenuStepDef()
+  {
+    //  HomeObject = new HomePage();
+    //  ProductObject = new ProductDetailsPage();
+  }
+
+  */
+
+        /*
+          public void UserHoverAndSelect()
+          {
+              HomeObject.HoverMenuAndSelectCategory();
+              Assert.IsTrue(HomeObject.HoverMenu.Text.Contains("Electronics"));
+              Console.WriteLine(HomeObject.HoverMenu.Text);
+             // driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+
+              Console.WriteLine(HomeObject.HoverDropDown.Text);
+
+            //  Assert.IsTrue(ProductObject.PageTittle.Text.Contains("Cell phones"));
+              //Console.WriteLine(ProductObject.PageTittle.Text);
+
+
+          }
+
+
+
+
+
+      }
+          */
+    
 

@@ -1,10 +1,9 @@
 ﻿using OpenQA.Selenium;
 
-namespace SeleniumFrameworkCSharp.pages;
 
-public class AddProductToCartPage : PageBase
+public class AddProductToCartPage 
 {
-    public AddProductToCartPage(IWebDriver driver) : base(driver)
+    public AddProductToCartPage(IWebDriver driver) 
     {
     }
 
@@ -17,7 +16,7 @@ public class AddProductToCartPage : PageBase
     public const String EmptyMsgID = "div.no-data";
     #endregion
 
-    public IWebElement Product => driver.FindElement(By.LinkText(ProductID));
+ /*   public IWebElement Product => driver.FindElement(By.LinkText(ProductID));
     public IWebElement TotalAmount => driver.FindElement(By.CssSelector(TotalAmountID)); 
     IWebElement RemoveBtn => driver.FindElement(By.CssSelector(RemoveBtnID));
     public IWebElement EmptyMsg => driver.FindElement(By.CssSelector(EmptyMsgID));
@@ -25,4 +24,5 @@ public class AddProductToCartPage : PageBase
     {
         ClickBtn(RemoveBtn);
     }
+ */
 }
