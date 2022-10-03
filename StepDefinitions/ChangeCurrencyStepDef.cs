@@ -3,6 +3,8 @@ using OpenQA.Selenium;
 using SpecFlowBasics.HooksInitialization;
 using SpecFlowBasics.Pages;
 using static SpecFlowBasics.HooksInitialization.Hooks;
+using Constants = SpecFlowBasics.data.Constants;
+
 
 
 namespace SpecFlowBasics.StepDefinitions
@@ -11,6 +13,8 @@ namespace SpecFlowBasics.StepDefinitions
     public class ChangeCurrencyStepDef
     {
         HomePage _homeObject;
+        SearchProductPage _searchObject;
+        ProductDetailsPage _detailsObject;
 
         public ChangeCurrencyStepDef(IWebDriver driver)
         {
@@ -33,6 +37,18 @@ namespace SpecFlowBasics.StepDefinitions
         [Then(@"User find the price of products in Euro")]
         public void ThenUserFindThePriceOfProductsInEuro()
         {
+         Hooks.driver.Navigate().GoToUrl("https://demo.nopcommerce.com/desktops");
+         IList<IWebElement> Currency = _homeObject.Currency;
+         int count = Currency.Count;
+         Console.WriteLine("num of elements: "+ count);
+
+         for (int i = 0; i < count; i++)
+         {
+             String ActualPrice = Currency[i].Text;
+             Assert.IsTrue(ActualPrice.Contains("€"));
+             Console.WriteLine(ActualPrice);
+         }
+
         }
 
     }

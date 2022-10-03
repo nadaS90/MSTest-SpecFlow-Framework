@@ -24,6 +24,7 @@ public class HomePage : PageBase
     public const string TwitterLinkID = "//a[@href=\"https://twitter.com/nopCommerce\"]";
     public const String YouTubeLinkID = "//a[@href=\"http://www.youtube.com/user/nopCommerce\"]";
     public const String LogOutID = "Log out";
+    public const String CurrencyID = "div.prices";
 
     #endregion
 
@@ -36,6 +37,8 @@ public class HomePage : PageBase
     IWebElement Twitter => driver.FindElement(By.XPath(TwitterLinkID)); 
     IWebElement YouTube => driver.FindElement(By.XPath(YouTubeLinkID));
     public IWebElement LogOutLink => driver.FindElement(By.LinkText(LogOutID));
+    public IList<IWebElement> Currency => driver.FindElements(By.CssSelector(CurrencyID));
+
 
 
 
