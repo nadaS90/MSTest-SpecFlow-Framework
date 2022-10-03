@@ -1,53 +1,65 @@
+using OpenQA.Selenium;
+using SpecFlowBasics.HooksInitialization;
+using SpecFlowBasics.Pages;
 using System;
 using TechTalk.SpecFlow;
+using static SpecFlowBasics.HooksInitialization.Hooks;
+using Constants = SpecFlowBasics.data.Constants;
+
+
 
 namespace SpecFlowBasics.StepDefinitions
 {
     [Binding]
     public class LoginStepDef
     {
-        private readonly ScenarioContext _scenarioContext;
+        HomePage _homeObject;
+        LoginPage _loginObject;
 
-        public LoginStepDef(ScenarioContext scenarioContext)
+        public LoginStepDef(IWebDriver driver)
         {
-            _scenarioContext = scenarioContext;
+            this._homeObject = new HomePage(Hooks.driver);
         }
 
 
         [Given(@"user go to login page")]
         public void GivenUserGoToLoginPage()
         {
-            throw new PendingStepException();
+            _homeObject.ClickLoginPage();
         }
 
-        [Given(@"user login with valid email and password ""([^""]*)"" and ""([^""]*)""")]
-        public void GivenUserLoginWithValidEmailAndPasswordAnd(string p0, string p1)
+        [Given(@"user login with valid email and password")]
+        public void GivenUserLoginWithValidEmailAndPassword()
         {
-            throw new PendingStepException();
+            _loginObject.UserEnterEmailAndPassword(Constants.Email, Constants.Password);
         }
+
 
         [Then(@"user login to the system successfully")]
         public void ThenUserLoginToTheSystemSuccessfully()
         {
-            throw new PendingStepException();
+            _loginObject.UserLogIn();
         }
 
         [When(@"user logout the system")]
         public void WhenUserLogoutTheSystem()
         {
-            throw new PendingStepException();
+            _homeObject.UserLogOut();
         }
 
         [When(@"user login with invalid email and password ""([^""]*)"" and ""([^""]*)""")]
-        public void WhenUserLoginWithInvalidEmailAndPasswordAnd(string p0, string p1)
+        public void WhenUserLoginWithInvalidEmailAndPasswordAnd(string Email, string Password)
         {
-            throw new PendingStepException();
+            _loginObject.UserEnterEmailAndPassword(Email, Password);
         }
 
         [Then(@"user could not login to the system")]
         public void ThenUserCouldNotLoginToTheSystem()
         {
-            throw new PendingStepException();
+            _loginObject.UserLogIn();
+            // Assert error meg
+            Assert.IsTrue(_loginObject.ErrorMsg.Text.Contains("Login was unsuccessful. Please correct the errors and try again."));
+
         }
     }
 }

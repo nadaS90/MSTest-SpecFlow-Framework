@@ -1,10 +1,12 @@
-﻿using OpenQA.Selenium;
+﻿using System.Collections.ObjectModel;
+using OpenQA.Selenium;
+using SpecFlowBasics.Helpers;
+using System.Linq;
 
 
-
-public class SearchProductPage
+public class SearchProductPage : PageBase
 {
-    public SearchProductPage(IWebDriver driver)
+    public SearchProductPage(IWebDriver driver) : base(driver)
     {
     }
 
@@ -16,13 +18,13 @@ public class SearchProductPage
     public const String SearchResultID = "Apple MacBook Pro 13-inch";
     #endregion
 
-/*
+
     IWebElement SearchTextBox => driver.FindElement(By.Id(SearchTextBoxID));
     IWebElement SearchBtn => driver.FindElement(By.CssSelector(SearchBtnID));
 
     IList<IWebElement> SearchDropDownResult => driver.FindElements(By.Id(SearchDropDownResultID));
 
-    IWebElement SearchResult => driver.FindElement(By.LinkText(SearchResultID));
+   public IWebElement SearchResult => driver.FindElement(By.LinkText(SearchResultID));
 
 
 
@@ -34,6 +36,7 @@ public class SearchProductPage
 
     public void productSearchWithAutoComplete(String searchAutoComplte)
     {
+
         SendTxt(SearchTextBox, searchAutoComplte);
         try
         {
@@ -41,9 +44,9 @@ public class SearchProductPage
         }
         catch (Exception e)
         {
-            throw  e;
+            throw e;
         }
-        SearchDropDownResult.GetItemByIndex(0).Click();
+        SearchDropDownResult[0].Click();
     }
-*/
+
 }

@@ -7,7 +7,7 @@ public class PageBase
 
 
 {
-    public IWebDriver driver;
+    public  IWebDriver driver;
 
     public SelectElement Select;
     //  public IJavaScriptExecutor jse;
@@ -18,7 +18,7 @@ public class PageBase
         this.driver = driver;
     }
 
-    public static void ClickBtn(IWebElement button)
+  public static void ClickBtn(IWebElement button)
     {
         button.Click();
     }

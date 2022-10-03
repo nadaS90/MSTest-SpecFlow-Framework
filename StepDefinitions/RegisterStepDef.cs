@@ -2,11 +2,10 @@ using OpenQA.Selenium;
 using SpecFlowBasics.HooksInitialization;
 using SpecFlowBasics.Pages;
 using System;
-using Microsoft.VisualBasic;
 using TechTalk.SpecFlow;
-using SpecFlowBasics.data;
-using static SpecFlowBasics.HooksInitialization.Hooks;
 using Constants = SpecFlowBasics.data.Constants;
+using static SpecFlowBasics.HooksInitialization.Hooks;
+
 
 
 namespace SpecFlowBasics.StepDefinitions
@@ -16,56 +15,50 @@ namespace SpecFlowBasics.StepDefinitions
     {
         HomePage _homeObject;
         RegisterPage _registerObject;
-        LoginPage _loginObject;
         static string RegisteredEmail = "";
 
         public RegisterStepDef(IWebDriver driver)
         {
             this._homeObject = new HomePage(Hooks.driver);
             this._registerObject = new RegisterPage(Hooks.driver);
-            this._loginObject = new LoginPage(Hooks.driver);
         }
 
-      //  driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(15);
-
-
-        [Given(@"user directed to register page")]
-        public void GivenUserDirectedToRegisterPage()
+        [Given(@"user navigates to register page")]
+        public void GivenUserNavigatesToRegisterPage()
         {
             _homeObject.ClickRegisterLink();
         }
 
-        [Given(@"user select the gender")]
-        public void GivenUserSelectTheGender()
+        [Given(@"user select gender")]
+        public void GivenUserSelectGender()
         {
             _registerObject.UserSelectGender();
         }
 
-        [When(@"user enter first name and last name")]
-        public void WhenUserEnterFirstNameAndLastName()
+        [When(@"enter first name and last name")]
+        public void WhenEnterFirstNameAndLastName()
         {
             _registerObject.UserAddFandLname(Constants.FName, Constants.LName);
         }
 
-        [When(@"user enter valid email")]
-        public void WhenUserEnterValidEmail()
+        [When(@"user enter email")]
+        public void WhenUserEnterEmail()
         {
             RegisteredEmail = Constants.Email;
             _registerObject.UserAddEmail(RegisteredEmail);
         }
 
-        [When(@"user fills required Password fields")]
-        public void WhenUserFillsRequiredPasswordFields()
+        [When(@"user fills Password fields")]
+        public void WhenUserFillsPasswordFields()
         {
             _registerObject.UserAddPassword(Constants.Password);
         }
 
-        [Then(@"user register successfully")]
-        public void ThenUserRegisterSuccessfully()
+        [Then(@"user could register successfully")]
+        public void ThenUserCouldRegisterSuccessfully()
         {
             _registerObject.UserClickRegisterBrn();
             Assert.IsTrue(_registerObject.SuccessfulMsg.Text.Contains("Your registration completed"));
         }
-
     }
 }

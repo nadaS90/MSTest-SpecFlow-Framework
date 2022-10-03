@@ -1,6 +1,5 @@
 ﻿using OpenQA.Selenium;
 using SpecFlowBasics.Helpers;
-
 namespace SpecFlowBasics.Pages;
 
 public class RegisterPage : PageBase

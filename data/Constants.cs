@@ -11,5 +11,7 @@ public static class Constants
     public static string Password = "p@ssword";
     public static String producrName = "Apple MacBook Pro 13-inch";
     public static String NewPassword = "p@$$word";
+    public static String ProductPartName = "MacB";
+
 
 }

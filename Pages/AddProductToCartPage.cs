@@ -1,9 +1,10 @@
 ﻿using OpenQA.Selenium;
+using SpecFlowBasics.Helpers;
 
 
-public class AddProductToCartPage 
+public class AddProductToCartPage : PageBase
 {
-    public AddProductToCartPage(IWebDriver driver) 
+    public AddProductToCartPage(IWebDriver driver) : base(driver)
     {
     }
 

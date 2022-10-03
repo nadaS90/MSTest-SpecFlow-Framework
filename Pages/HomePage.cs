@@ -1,12 +1,14 @@
-﻿using OpenQA.Selenium;
+﻿using System.Transactions;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using SpecFlowBasics.Helpers;
+using SpecFlowBasics.HooksInitialization;
 
 namespace SpecFlowBasics.Pages; 
 public class HomePage : PageBase
 {
-
+    //private static IWebDriver driver;
     public HomePage(IWebDriver driver) : base(driver)
     {
     }
@@ -21,6 +23,7 @@ public class HomePage : PageBase
     public const String FaceBookLinkID = "//a[@href=\"http://www.facebook.com/nopCommerce\"]";
     public const string TwitterLinkID = "//a[@href=\"https://twitter.com/nopCommerce\"]";
     public const String YouTubeLinkID = "//a[@href=\"http://www.youtube.com/user/nopCommerce\"]";
+    public const String LogOutID = "Log out";
 
     #endregion
 
@@ -32,12 +35,14 @@ public class HomePage : PageBase
     IWebElement FaceBook => driver.FindElement(By.XPath(FaceBookLinkID)); 
     IWebElement Twitter => driver.FindElement(By.XPath(TwitterLinkID)); 
     IWebElement YouTube => driver.FindElement(By.XPath(YouTubeLinkID));
-    
+    public IWebElement LogOutLink => driver.FindElement(By.LinkText(LogOutID));
 
 
 
 
-     public void ClickRegisterLink()
+
+
+    public void ClickRegisterLink()
      {
          ClickBtn(RegisterLink);
      }
@@ -50,15 +55,19 @@ public class HomePage : PageBase
      public void ClickChangeCurrency()
      {
          Select = new SelectElement(ChangeCurrency);
+     }
+
+     public void UserChooserEuro()
+     {
          Select.SelectByText("Euro");
      }
 
-     public void HoverMenuAndSelectCategory()
+    public void HoverMenuAndSelectCategory()
      {
-         Actions action = new Actions(driver);
+         Actions action = new Actions(Hooks.driver);
          action.MoveToElement(HoverMenu).Perform();
          action.MoveToElement(HoverDropDown).Click().Perform();
-         driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+         Hooks.driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
 
     }
 
@@ -74,5 +83,9 @@ public class HomePage : PageBase
      public void UserNavigateToYouTube()
      {
          ClickBtn(YouTube);
+     }
+     public void UserLogOut()
+     {
+         ClickBtn(LogOutLink);
      }
 }
