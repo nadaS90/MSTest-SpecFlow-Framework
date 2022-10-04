@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using SpecFlowBasics.Common_Locators;
 using SpecFlowBasics.Pages;
 
 namespace SpecFlowBasics.StepDefinitions
@@ -8,7 +9,7 @@ namespace SpecFlowBasics.StepDefinitions
     public class HoverMenuStepDef
     {
         HomePage HomeObject;
-        ProductDetailsPage ProductObject;
+        CommonLocators _commonObject;
     }
 }
 /*  public HoverMenuStepDef()

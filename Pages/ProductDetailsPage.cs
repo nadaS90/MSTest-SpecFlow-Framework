@@ -14,11 +14,11 @@ public class ProductDetailsPage : PageBase
     public const string EmailtoFriendID = "div.email-a-friend";
     public const string CurrencyTypeID = "price-value-4";
     public const string AddMyReviewID = "Add your review";
-    public const string AddProductWishListID = "add-to-wishlist-button-4";
-    public const string PopSucessMsgID = "p.content";
-    public const string CloseMsgID = "span.close";
-    public const string CompareProductsID = "div.compare-products";
-    public const string AddToCartID = "add-to-cart-button-5";
+   // public const string AddProductWishListID = "add-to-wishlist-button-4";
+  //  public const string PopSucessMsgID = "p.content";
+   // public const string CloseMsgID = "span.close";
+   // public const string CompareProductsID = "div.compare-products";
+   // public const string AddToCartID = "add-to-cart-button-5";
     public const String PageTittleID = "div.page-title";
     #endregion
 
@@ -30,7 +30,7 @@ public class ProductDetailsPage : PageBase
 
     public IWebElement AddMyReviewBtn => driver.FindElement(By.LinkText(AddMyReviewID));
 
-   public IWebElement AddProductWishListBtn => driver.FindElement(By.Id(AddProductWishListID));
+  /* public IWebElement AddProductWishListBtn => driver.FindElement(By.Id(AddProductWishListID));
 
     public IWebElement PopSucessMsg => driver.FindElement(By.CssSelector(PopSucessMsgID));
 
@@ -39,6 +39,7 @@ public class ProductDetailsPage : PageBase
     IWebElement CompareProductsBtn => driver.FindElement(By.CssSelector(CompareProductsID));
 
     IWebElement AddToCartBtn => driver.FindElement(By.Id(AddToCartID));
+  */
    public IWebElement PageTittle => driver.FindElement(By.CssSelector(PageTittleID));
 
     
@@ -54,7 +55,7 @@ public class ProductDetailsPage : PageBase
          ClickBtn(AddMyReviewBtn);
      }
 
-     public void UsedAddProductWishList()
+ /*    public void UsedAddProductWishList()
       {
           ClickBtn(AddProductWishListBtn);
       } 
@@ -72,6 +73,6 @@ public class ProductDetailsPage : PageBase
     {
         ClickBtn(AddToCartBtn);
     }
-
+ */
 
 }

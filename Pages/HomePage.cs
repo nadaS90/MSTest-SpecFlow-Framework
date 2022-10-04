@@ -25,11 +25,18 @@ public class HomePage : PageBase
     public const String YouTubeLinkID = "//a[@href=\"http://www.youtube.com/user/nopCommerce\"]";
     public const String LogOutID = "Log out";
     public const String CurrencyID = "div.prices";
+    public const String WishListProductID = "a[href=\"/htc-one-m8-android-l-50-lollipop\"]";
+    /*public const String WishLisBtnID = "add-to-wishlist-button-18";
+    public const String WishListLinkID = "a[href=\"/wishlist\"]";
+    public const String WishListItensNoID = "div[class=\"wishlist-content\"]";
+    */
 
     #endregion
 
     IWebElement RegisterLink => driver.FindElement(By.LinkText(RegisterLinkID));
     IWebElement LoginLink => driver.FindElement(By.LinkText(LoginLinkID));
+   // IWebElement WishListink => driver.FindElement(By.CssSelector(WishListLinkID));
+
     IWebElement ChangeCurrency => driver.FindElement(By.Id(ChangeCurancyID));
     public IWebElement HoverMenu => driver.FindElement(By.CssSelector(HoverMenuID));
     public IWebElement HoverDropDown => driver.FindElement(By.XPath(HoverDropDownID));
@@ -38,6 +45,13 @@ public class HomePage : PageBase
     IWebElement YouTube => driver.FindElement(By.XPath(YouTubeLinkID));
     public IWebElement LogOutLink => driver.FindElement(By.LinkText(LogOutID));
     public IList<IWebElement> Currency => driver.FindElements(By.CssSelector(CurrencyID));
+    public IWebElement WishListProduct => driver.FindElement(By.CssSelector(WishListProductID)); 
+  //  IWebElement WishListBtn => driver.FindElement(By.Id(WishLisBtnID));
+  //  IWebElement WishListItensNo => driver.FindElement(By.Id(WishListItensNoID));
+
+
+
+
 
 
 
@@ -90,5 +104,10 @@ public class HomePage : PageBase
      public void UserLogOut()
      {
          ClickBtn(LogOutLink);
+     }
+
+     public void SelectProductToWishList()
+     {
+        ClickBtn(WishListProduct); 
      }
 }

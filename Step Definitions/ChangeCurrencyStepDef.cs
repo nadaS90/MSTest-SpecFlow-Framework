@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
+using SpecFlowBasics.Common_Locators;
 using SpecFlowBasics.HooksInitialization;
 using SpecFlowBasics.Pages;
 using static SpecFlowBasics.HooksInitialization.Hooks;
@@ -14,7 +15,7 @@ namespace SpecFlowBasics.StepDefinitions
     {
         HomePage _homeObject;
         SearchProductPage _searchObject;
-        ProductDetailsPage _detailsObject;
+        CommonLocators _commonObject;
 
         public ChangeCurrencyStepDef(IWebDriver driver)
         {

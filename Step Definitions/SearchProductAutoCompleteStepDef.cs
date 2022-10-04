@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
+using SpecFlowBasics.Common_Locators;
 using SpecFlowBasics.data;
 using SpecFlowBasics.HooksInitialization;
 using SpecFlowBasics.Pages;
