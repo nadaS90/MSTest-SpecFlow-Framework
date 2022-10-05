@@ -15,20 +15,26 @@ public class WishListPage : PageBase
     public const String ItemsListWishID = "td.product";
     public const String RemoveItemsBtnID = "button.remove-btn";
     public const String EmptyCartLblID = "div.no-data";
-   // public const String WishListProductsNoID = "div.wishlist-content";
+   public const String WishListItemsID = "div.wishlist-content";
 
     #endregion
 
     public IWebElement ItemsListWish => driver.FindElement(By.CssSelector(ItemsListWishID));
     public IWebElement RemoveItemsBtn => driver.FindElement(By.CssSelector(RemoveItemsBtnID));
     public IWebElement EmptyCartLbl => driver.FindElement(By.CssSelector(EmptyCartLblID));
-    //public IWebElement WishListProductsNo => driver.FindElement(By.CssSelector(WishListProductsNoID));
+    public IList<IWebElement> WishListItems => driver.FindElements(By.CssSelector(WishListItemsID));
 
 
 
     public void RemoveProductFromWishlist()
     {
         ClickBtn(RemoveItemsBtn);
+    }
+
+    public int GetItemsNoInWishList()
+    {
+        int ItemsNo = WishListItems.Count;
+        return ItemsNo;
     }
 }
 

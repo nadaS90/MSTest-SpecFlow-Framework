@@ -48,19 +48,14 @@ namespace SpecFlowBasics
         [Then(@"product found in wishlist page")]
         public void ThenProductFoundInWishlistPage()
         {
-           // Size size = default;
-            //  size = _wishObject.WishListProductsNo.Size(size);
-           // Assert.AreEqual(productsNo, size);
-           // Console.WriteLine("No. of items in wishlist: " + size);
-          //  Assert.IsTrue(size > 0, "Items Found");
-           //Assert.IsFalse(_wishObject.EmptyCartLbl.Displayed);
+            int ItemsNo = _wishObject.GetItemsNoInWishList();
+            Console.WriteLine("No. of items in wishlist: " + ItemsNo);
+           Assert.IsTrue(ItemsNo > 0, "Items Found");
            Assert.IsTrue(_wishObject.ItemsListWish.Displayed);
            Assert.IsTrue(_wishObject.ItemsListWish.Text.Contains("pop"));    
            Console.WriteLine(_wishObject.ItemsListWish.Text);
         }
 
-       
-        [Then(@"user can delete product")]
         [Then(@"user can delete product")]
         public void ThenUserCanDeleteProduct()
         {
