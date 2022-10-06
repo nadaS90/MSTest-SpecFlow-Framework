@@ -23,10 +23,9 @@ public class ProductDetailsPage : PageBase
     public IWebElement AddMyReviewBtn => driver.FindElement(By.LinkText(AddMyReviewID));
     public IWebElement PageTittle => driver.FindElement(By.CssSelector(PageTittleID));
 
-    
 
 
-   public void EmailProductToAFriend()
+    public void EmailProductToAFriend()
     {
         ClickBtn(EmailtoFriendBtn);
     }
@@ -35,6 +34,7 @@ public class ProductDetailsPage : PageBase
      {
          ClickBtn(AddMyReviewBtn);
      }
+
 
 
 }

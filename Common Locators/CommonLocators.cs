@@ -23,6 +23,8 @@ public class CommonLocators : PageBase
     public const String WishLisBtnID = "add-to-wishlist-button-18";
     public const String WishListLinkID = "a[href=\"/wishlist\"]";
     public const String ChangeCurancyID = "customerCurrency";
+    public const String ResultMsgID = "div.result";
+
 
 
 
@@ -39,6 +41,8 @@ public class CommonLocators : PageBase
     IWebElement WishListLink => driver.FindElement(By.CssSelector(WishListLinkID));
     IWebElement WishListBtn => driver.FindElement(By.Id(WishLisBtnID));
     IWebElement ChangeCurrency => driver.FindElement(By.Id(ChangeCurancyID));
+    public IWebElement ResultMsg => driver.FindElement(By.CssSelector(ResultMsgID));
+
 
 
 

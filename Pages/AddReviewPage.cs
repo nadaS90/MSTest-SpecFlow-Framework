@@ -16,7 +16,6 @@ public class AddReviewPage : PageBase
     public const String ReviewTxtBoxID = "AddProductReview_ReviewText";
     public const String RateBtnID = "addproductrating_2";
     public const String SubmitBtnID = "div.buttons";
-    public const String ResultMsgID = "div.result";
 
     #endregion
 
@@ -24,7 +23,6 @@ public class AddReviewPage : PageBase
     public IWebElement ReviewTxtBox => driver.FindElement(By.Id(ReviewTxtBoxID));
     public IWebElement RateBtn => driver.FindElement(By.Id(RateBtnID));
     public IWebElement SubmitBtn => driver.FindElement(By.CssSelector(SubmitBtnID));
-    public IWebElement ResultMsg => driver.FindElement(By.CssSelector(ResultMsgID));
 
 
     public void userSendReview(String tittle, String reviewBody)

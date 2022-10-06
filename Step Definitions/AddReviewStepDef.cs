@@ -55,13 +55,13 @@ namespace SpecFlowBasics
         public void WhenUserAddReview()
         {
             _detailsObject.UserAddReview();
-            _reviewObject.userSendReview(Constants.tittle, Constants.reviewBody);
+            _reviewObject.userSendReview(Constants.Tittle, Constants.ReviewBody);
         }
 
         [Then(@"success Meg appears")]
         public void ThenSuccessMegAppears()
         {
-            Assert.IsTrue(_reviewObject.ResultMsg.Text.Contains("Product review is successfully added."));
+            Assert.IsTrue(_commonObject.ResultMsg.Text.Contains("Product review is successfully added."));
 
         }
     }

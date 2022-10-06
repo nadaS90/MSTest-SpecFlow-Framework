@@ -51,8 +51,8 @@
     <Compile Update="Features\F07_WishList .feature.cs">
       <DependentUpon>F07_WishList .feature</DependentUpon>
     </Compile>
-    <Compile Update="Features\F10_SendToFriend.feature.cs">
-      <DependentUpon>F10_SendToFriend.feature</DependentUpon>
+    <Compile Update="Features\F10_EmailAFreind.feature.cs">
+      <DependentUpon>F10_EmailAFreind.feature</DependentUpon>
     </Compile>
     <Compile Update="Features\F09_AddReview.feature.cs">
       <DependentUpon>F09_AddReview.feature</DependentUpon>
@@ -84,7 +84,7 @@
       <Visible>$(UsingMicrosoftNETSdk)</Visible>
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>
-    <SpecFlowFeatureFiles Update="Features\F10_SendToFriend.feature">
+    <SpecFlowFeatureFiles Update="Features\F10_EmailAFreind.feature">
       <Visible>$(UsingMicrosoftNETSdk)</Visible>
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>

@@ -8,11 +8,14 @@ public static class Constants
     public static string FName = "Nada";
     public static string LName = "Sayed";
     //  public static string Email = $"test{randomNum}@example.com";
-    public static string Email = "test2@example.com";
+    public static string Email = "test11111@example.com";
     public static string Password = "p@ssword";
     public static String producrName = "Apple MacBook Pro 13-inch";
     public static String NewPassword = "p@$$word";
     public static String ProductPartName = "MacB";
-    public static String tittle = "Great";
-    public static String reviewBody = "The product is good";
+    public static String Tittle = "Great";
+    public static String ReviewBody = "The product is good";
+    public static String MsgBody = "Hi! Try this product friend";
+    public static String Friend = "test100@example.com";
+
 }
