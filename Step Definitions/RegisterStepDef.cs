@@ -14,7 +14,6 @@ namespace SpecFlowBasics.StepDefinitions
     [Binding]
     public class RegisterStepDef
     {
-        HomePage _homeObject;
         RegisterPage _registerObject;
         CommonLocators _commonObject;
 
@@ -22,10 +21,8 @@ namespace SpecFlowBasics.StepDefinitions
 
         public RegisterStepDef(IWebDriver driver)
         {
-            this._homeObject = new HomePage(Hooks.driver);
             this._registerObject = new RegisterPage(Hooks.driver);
             this._commonObject = new CommonLocators(Hooks.driver);
-
         }
 
         [Given(@"user navigates to register page")]
