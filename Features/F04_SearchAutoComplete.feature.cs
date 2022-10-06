@@ -29,7 +29,7 @@ namespace SpecFlowBasics.Features
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "SearchAutoComplete.feature"
+#line 1 "F04_SearchAutoComplete.feature"
 #line hidden
         
         public virtual Microsoft.VisualStudio.TestTools.UnitTesting.TestContext TestContext

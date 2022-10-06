@@ -1,5 +1,6 @@
 ﻿using System.Drawing;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using SpecFlowBasics.Helpers;
 
 namespace SpecFlowBasics.Common_Locators;
@@ -12,17 +13,24 @@ public class CommonLocators : PageBase
 
     #region MyRegion
     //Locators :
+    public const string RegisterLinkID = "Register";
+    public const String LoginLinkID = "a.ico-login";
     public const string AddProductWishListID = "add-to-wishlist-button-4";
     public const string PopSucessMsgID = "p.content";
     public const string CloseMsgID = "span.close";
     public const string CompareProductsID = "div.compare-products";
-    public const string AddToCartID = "add-to-cart-button-5";
+    public const string AddToCartID = "add-to-cart-button-4";
     public const String WishLisBtnID = "add-to-wishlist-button-18";
     public const String WishListLinkID = "a[href=\"/wishlist\"]";
+    public const String ChangeCurancyID = "customerCurrency";
+
+
 
     #endregion
 
 
+    IWebElement RegisterLink => driver.FindElement(By.LinkText(RegisterLinkID));
+    IWebElement LoginLink => driver.FindElement(By.CssSelector(LoginLinkID));
     public IWebElement AddProductWishListBtn => driver.FindElement(By.Id(AddProductWishListID));
     public IWebElement PopSucessMsg => driver.FindElement(By.CssSelector(PopSucessMsgID));
     public IWebElement CloseMsgBtn => driver.FindElement(By.CssSelector(CloseMsgID));
@@ -30,8 +38,23 @@ public class CommonLocators : PageBase
     IWebElement AddToCartBtn => driver.FindElement(By.Id(AddToCartID));
     IWebElement WishListLink => driver.FindElement(By.CssSelector(WishListLinkID));
     IWebElement WishListBtn => driver.FindElement(By.Id(WishLisBtnID));
+    IWebElement ChangeCurrency => driver.FindElement(By.Id(ChangeCurancyID));
 
 
+
+
+
+
+
+    public void ClickRegisterLink()
+    {
+        ClickBtn(RegisterLink);
+    }
+
+    public void ClickLoginPage()
+    {
+        ClickBtn(LoginLink);
+    }
 
     public void UsedAddProductWishList()
     {
@@ -61,7 +84,13 @@ public class CommonLocators : PageBase
     {
         ClickBtn(WishListBtn);
     }
+    public void ClickChangeCurrency()
+    {
+        Select = new SelectElement(ChangeCurrency);
+    }
 
-
-
+    public void ClickAddCart()
+    {
+        ClickBtn(AddToCartBtn);
+    }
 }

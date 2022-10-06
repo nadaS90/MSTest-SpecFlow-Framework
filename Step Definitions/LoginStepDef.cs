@@ -1,4 +1,5 @@
 using OpenQA.Selenium;
+using SpecFlowBasics.Common_Locators;
 using SpecFlowBasics.HooksInitialization;
 using SpecFlowBasics.Pages;
 using System;
@@ -15,17 +16,21 @@ namespace SpecFlowBasics.StepDefinitions
     {
         HomePage _homeObject;
         LoginPage _loginObject;
+        CommonLocators _commonObject;
+
 
         public LoginStepDef(IWebDriver driver)
         {
             this._homeObject = new HomePage(Hooks.driver);
+            this._loginObject = new LoginPage(Hooks.driver);
+            this._commonObject = new CommonLocators(Hooks.driver);
         }
 
 
         [Given(@"user go to login page")]
         public void GivenUserGoToLoginPage()
         {
-            _homeObject.ClickLoginPage();
+            _commonObject.ClickLoginPage();
         }
 
         [Given(@"user login with valid email and password")]
@@ -45,11 +50,14 @@ namespace SpecFlowBasics.StepDefinitions
         public void WhenUserLogoutTheSystem()
         {
             _homeObject.UserLogOut();
+
         }
 
         [When(@"user login with invalid email and password ""([^""]*)"" and ""([^""]*)""")]
         public void WhenUserLoginWithInvalidEmailAndPasswordAnd(string Email, string Password)
         {
+            _commonObject.ClickLoginPage();
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(15);
             _loginObject.UserEnterEmailAndPassword(Email, Password);
         }
 

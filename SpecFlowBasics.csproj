@@ -9,6 +9,9 @@
   <ItemGroup>
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\ChangeCurrency - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\ChromeBrowser - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Features\F7_WishList - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Features\F8_AddProductToCart - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Features\F9_AddReview - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\FollowUs - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\Login - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\NonChromeBrowser - Copy.feature.cs" />
@@ -16,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="ExtentReports" Version="4.1.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.0.0" />
     <PackageReference Include="Selenium.Support" Version="4.4.0" />
     <PackageReference Include="Selenium.WebDriver" Version="4.4.0" />
@@ -28,62 +32,83 @@
     <PackageReference Include="MSTest.TestAdapter" Version="2.2.7" />
     <PackageReference Include="MSTest.TestFramework" Version="2.2.7" />
     <PackageReference Include="FluentAssertions" Version="6.2.0" />
+    <PackageReference Include="SpecFlow.Tools.MsBuild.Generation" Version="3.9.40" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Common Locators\" />
-    <Folder Include="Shared Stepd Def\" />
+    <Folder Include="Runner\" />
     <Folder Include="ScreenShots\" />
-    <Folder Include="Support\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Features\SearchAutoComplete.feature.cs">
-      <DependentUpon>SearchAutoComplete.feature</DependentUpon>
+    <Compile Update="Features\F04_SearchAutoComplete.feature.cs">
+      <DependentUpon>F04_SearchAutoComplete.feature</DependentUpon>
     </Compile>
-    <Compile Update="Features\Register.feature.cs">
-      <DependentUpon>Register.feature</DependentUpon>
+    <Compile Update="Features\F01_Register.feature.cs">
+      <DependentUpon>F01_Register.feature</DependentUpon>
     </Compile>
-    <Compile Update="Features\WishList.feature.cs">
-      <DependentUpon>WishList.feature</DependentUpon>
+    <Compile Update="Features\F07_WishList .feature.cs">
+      <DependentUpon>F07_WishList .feature</DependentUpon>
     </Compile>
-    <Compile Update="Features\HoverCategiries.feature.cs">
-      <DependentUpon>HoverCategiries.feature</DependentUpon>
+    <Compile Update="Features\F10_SendToFriend.feature.cs">
+      <DependentUpon>F10_SendToFriend.feature</DependentUpon>
     </Compile>
-    <Compile Update="Features\ChangeCurrency.feature.cs">
-      <DependentUpon>ChangeCurrency.feature</DependentUpon>
+    <Compile Update="Features\F09_AddReview.feature.cs">
+      <DependentUpon>F09_AddReview.feature</DependentUpon>
     </Compile>
-    <Compile Update="Features\FollowUs.feature.cs">
-      <DependentUpon>FollowUs.feature</DependentUpon>
+    <Compile Update="Features\F08_AddProductToCart.feature.cs">
+      <DependentUpon>F08_AddProductToCart.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Features\F05_HoverCategiries.feature.cs">
+      <DependentUpon>F05_HoverCategiries.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Features\F03_ChangeCurrency.feature.cs">
+      <DependentUpon>F03_ChangeCurrency.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Features\F06_FollowUs.feature.cs">
+      <DependentUpon>F06_FollowUs.feature</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <SpecFlowFeatureFiles Update="Features\SearchAutoComplete.feature">
+    <SpecFlowFeatureFiles Update="Features\F04_SearchAutoComplete.feature">
       <Visible>$(UsingMicrosoftNETSdk)</Visible>
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>
-    <SpecFlowFeatureFiles Update="Features\Register.feature">
+    <SpecFlowFeatureFiles Update="Features\F01_Register.feature">
       <Visible>$(UsingMicrosoftNETSdk)</Visible>
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>
-    <SpecFlowFeatureFiles Update="Features\WishList.feature">
+    <SpecFlowFeatureFiles Update="Features\F07_WishList .feature">
       <Visible>$(UsingMicrosoftNETSdk)</Visible>
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>
-    <SpecFlowFeatureFiles Update="Features\HoverCategiries.feature">
+    <SpecFlowFeatureFiles Update="Features\F10_SendToFriend.feature">
       <Visible>$(UsingMicrosoftNETSdk)</Visible>
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>
-    <SpecFlowFeatureFiles Update="Features\ChangeCurrency.feature">
+    <SpecFlowFeatureFiles Update="Features\F09_AddReview.feature">
       <Visible>$(UsingMicrosoftNETSdk)</Visible>
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>
-    <SpecFlowFeatureFiles Update="Features\FollowUs.feature">
+    <SpecFlowFeatureFiles Update="Features\F08_AddProductToCart.feature">
       <Visible>$(UsingMicrosoftNETSdk)</Visible>
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>
-    <SpecFlowFeatureFiles Update="Features\Login.feature">
+    <SpecFlowFeatureFiles Update="Features\F05_HoverCategiries.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Features\F03_ChangeCurrency.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Features\F06_FollowUs.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Features\F02_Login.feature">
       <Visible>$(UsingMicrosoftNETSdk)</Visible>
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>

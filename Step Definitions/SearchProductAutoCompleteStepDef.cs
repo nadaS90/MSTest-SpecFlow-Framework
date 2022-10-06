@@ -23,7 +23,6 @@ namespace SpecFlowBasics.StepDefinitions
         }
 
 
-
         [Given(@"User type part of product name")]
         public void GivenUserTypePartOfProductName()
         {
@@ -37,6 +36,5 @@ namespace SpecFlowBasics.StepDefinitions
             Assert.IsTrue(_detailsObject.ProductName.Text.Contains(Constants.producrName));
 
         }
-
-    }
+     }
 }

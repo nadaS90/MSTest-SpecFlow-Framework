@@ -29,7 +29,7 @@ namespace SpecFlowBasics.Features
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "HoverCategiries.feature"
+#line 1 "F05_HoverCategiries.feature"
 #line hidden
         
         public virtual Microsoft.VisualStudio.TestTools.UnitTesting.TestContext TestContext

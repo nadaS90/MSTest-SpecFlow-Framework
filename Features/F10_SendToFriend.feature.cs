@@ -20,7 +20,7 @@ namespace SpecFlowBasics.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute()]
-    public partial class WishistFeatureFeature
+    public partial class SendToFriendFeatureFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -29,7 +29,7 @@ namespace SpecFlowBasics.Features
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "WishList.feature"
+#line 1 "F10_SendToFriend.feature"
 #line hidden
         
         public virtual Microsoft.VisualStudio.TestTools.UnitTesting.TestContext TestContext
@@ -48,7 +48,7 @@ namespace SpecFlowBasics.Features
         public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Wishist Feature", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Send to friend Feature", null, ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -63,9 +63,9 @@ namespace SpecFlowBasics.Features
         public virtual void TestInitialize()
         {
             if (((testRunner.FeatureContext != null) 
-                        && (testRunner.FeatureContext.FeatureInfo.Title != "Wishist Feature")))
+                        && (testRunner.FeatureContext.FeatureInfo.Title != "Send to friend Feature")))
             {
-                global::SpecFlowBasics.Features.WishistFeatureFeature.FeatureSetup(null);
+                global::SpecFlowBasics.Features.SendToFriendFeatureFeature.FeatureSetup(null);
             }
         }
         
@@ -92,15 +92,15 @@ namespace SpecFlowBasics.Features
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("User selects product to add to wishist")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Wishist Feature")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("User send product to a friend")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Send to friend Feature")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("smoke")]
-        public virtual void UserSelectsProductToAddToWishist()
+        public virtual void UserSendProductToAFriend()
         {
             string[] tagsOfScenario = new string[] {
                     "smoke"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User selects product to add to wishist", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User send product to a friend", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 4
  this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -121,21 +121,6 @@ namespace SpecFlowBasics.Features
             else
             {
                 this.ScenarioStart();
-#line 5
-    testRunner.Given("User clicks on add product wishlist", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 6
-    testRunner.Then("Success message appears", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 7
-    testRunner.When("User navigates to wishlist page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 8
-    testRunner.Then("product found in wishlist page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 9
-    testRunner.Then("user can delete product", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
             }
             this.ScenarioCleanup();
         }

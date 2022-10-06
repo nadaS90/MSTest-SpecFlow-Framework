@@ -29,7 +29,7 @@ namespace SpecFlowBasics.Features
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "ChangeCurrency.feature"
+#line 1 "F03_ChangeCurrency.feature"
 #line hidden
         
         public virtual Microsoft.VisualStudio.TestTools.UnitTesting.TestContext TestContext

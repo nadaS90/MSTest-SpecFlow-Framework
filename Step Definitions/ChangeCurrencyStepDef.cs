@@ -14,18 +14,18 @@ namespace SpecFlowBasics.StepDefinitions
     public class ChangeCurrencyStepDef
     {
         HomePage _homeObject;
-        SearchProductPage _searchObject;
         CommonLocators _commonObject;
 
         public ChangeCurrencyStepDef(IWebDriver driver)
         {
             this._homeObject = new HomePage(Hooks.driver);
+            this._commonObject = new CommonLocators(Hooks.driver);
         }
 
         [Given(@"User clicks on drop list")]
         public void GivenUserClicksOnDropList()
         {
-            _homeObject.ClickChangeCurrency();
+            _commonObject.ClickChangeCurrency();
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(15);
         }
 

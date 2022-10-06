@@ -29,7 +29,7 @@ namespace SpecFlowBasics.Features
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "FollowUs.feature"
+#line 1 "F06_FollowUs.feature"
 #line hidden
         
         public virtual Microsoft.VisualStudio.TestTools.UnitTesting.TestContext TestContext
