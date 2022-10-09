@@ -8,18 +8,18 @@ using TechTalk.SpecFlow;
 namespace SpecFlowBasics
 {
     [Binding]
-    public class HoverStepDef
+    public class S05_HoverStepDef
     {
 
-        HomePage _homeObject;
-        ProductDetailsPage _productObject;
+        P03_HomePage _homeObject;
+        P05_ProductDetailsPage _productObject;
 
 
 
-       public HoverStepDef(IWebDriver driver)
+       public S05_HoverStepDef(IWebDriver driver)
         {
-            this._homeObject = new HomePage(Hooks.driver);
-            this._productObject = new ProductDetailsPage(Hooks.driver);
+            this._homeObject = new P03_HomePage(Hooks.driver);
+            this._productObject = new P05_ProductDetailsPage(Hooks.driver);
 
         }
 

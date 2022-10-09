@@ -1,4 +1,4 @@
-﻿Feature: Register Feature
+﻿Feature: F01_Register Feature
 
 @smoke
 

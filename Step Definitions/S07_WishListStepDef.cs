@@ -9,17 +9,17 @@ using TechTalk.SpecFlow;
 namespace SpecFlowBasics
 {
     [Binding]
-    public class WishListStepDef
+    public class S07_WishListStepDef
     {
-        HomePage _homeObject;
+        P03_HomePage _homeObject;
         CommonLocators _commonObject;
-        WishListPage _wishObject;
+        P06_WishListPage _wishObject;
 
-        public WishListStepDef(IWebDriver driver)
+        public S07_WishListStepDef(IWebDriver driver)
         {
-            this._homeObject = new HomePage(Hooks.driver);
+            this._homeObject = new P03_HomePage(Hooks.driver);
             this._commonObject = new CommonLocators(Hooks.driver);
-            this._wishObject = new WishListPage(Hooks.driver);
+            this._wishObject = new P06_WishListPage(Hooks.driver);
 
         }
 

@@ -1,4 +1,4 @@
-﻿Feature: Changes currency Feature
+﻿Feature: F03_Changes currency Feature
 
 @smoke
  Scenario: User changes currency from US Dollar to Euro

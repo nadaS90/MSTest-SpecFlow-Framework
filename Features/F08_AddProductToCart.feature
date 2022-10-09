@@ -1,4 +1,4 @@
-﻿Feature: Add product to cart Feature
+﻿Feature: F08_Add product to cart Feature
 
 @smoke
  Scenario: User add product to cart

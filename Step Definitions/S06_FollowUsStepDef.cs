@@ -8,14 +8,14 @@ using static SpecFlowBasics.HooksInitialization.Hooks;
 namespace SpecFlowBasics.StepDefinitions
 {
     [Binding]
-    public class FollowUsStepDef
+    public class S06_FollowUsStepDef
     {
-        HomePage _homeObject;
+        P03_HomePage _homeObject;
 
 
-        public FollowUsStepDef(IWebDriver driver)
+        public S06_FollowUsStepDef(IWebDriver driver)
         {
-            this._homeObject = new HomePage(Hooks.driver);
+            this._homeObject = new P03_HomePage(Hooks.driver);
         }
 
         [Given(@"user clicks on facebook")]

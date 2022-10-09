@@ -9,17 +9,17 @@ using TechTalk.SpecFlow;
 namespace SpecFlowBasics
 {
     [Binding]
-    public class EmailAFreindStepDef
+    public class S10_EmailAFreindStepDef
     {
         CommonLocators _commonObject;
-        ProductDetailsPage _detailsObject;
-        EmailAFreindPage _emailObject;
+        P05_ProductDetailsPage _detailsObject;
+        P09_EmailAFreindPage _emailObject;
 
-        public EmailAFreindStepDef(IWebDriver driver)
+        public S10_EmailAFreindStepDef(IWebDriver driver)
         {
             this._commonObject = new CommonLocators(Hooks.driver);
-            this._detailsObject = new ProductDetailsPage(Hooks.driver);
-            this._emailObject = new EmailAFreindPage(Hooks.driver);
+            this._detailsObject = new P05_ProductDetailsPage(Hooks.driver);
+            this._emailObject = new P09_EmailAFreindPage(Hooks.driver);
         }
 
         [When(@"User Add a friend e-mail and send")]

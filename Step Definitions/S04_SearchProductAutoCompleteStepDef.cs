@@ -11,15 +11,15 @@ namespace SpecFlowBasics.StepDefinitions
 {
     [Binding]
 
-    public class SearchProductAutoCompleteStepDef
+    public class S04_SearchProductAutoCompleteStepDef
     {
-        SearchProductPage _searchObject;
-        ProductDetailsPage _detailsObject;
+        P04_SearchProductPage _searchObject;
+        P05_ProductDetailsPage _detailsObject;
 
-        public SearchProductAutoCompleteStepDef(IWebDriver driver)
+        public S04_SearchProductAutoCompleteStepDef(IWebDriver driver)
         {
-            this._searchObject = new SearchProductPage(Hooks.driver);
-            this._detailsObject = new ProductDetailsPage(Hooks.driver);
+            this._searchObject = new P04_SearchProductPage(Hooks.driver);
+            this._detailsObject = new P05_ProductDetailsPage(Hooks.driver);
         }
 
 

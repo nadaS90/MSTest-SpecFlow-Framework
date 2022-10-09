@@ -10,19 +10,19 @@ namespace SpecFlowBasics
 {
     [Binding]
 
-    public class AddReviewStepDef
+    public class S09_AddReviewStepDef
     {
         CommonLocators _commonObject;
-        ProductDetailsPage _detailsObject;
-        AddReviewPage _reviewObject;
+        P05_ProductDetailsPage _detailsObject;
+        P08_AddReviewPage _reviewObject;
 
 
 
-        public AddReviewStepDef(IWebDriver driver)
+        public S09_AddReviewStepDef(IWebDriver driver)
         {
             this._commonObject = new CommonLocators(Hooks.driver);
-            this._detailsObject = new ProductDetailsPage(Hooks.driver);
-            this._reviewObject = new AddReviewPage(Hooks.driver);
+            this._detailsObject = new P05_ProductDetailsPage(Hooks.driver);
+            this._reviewObject = new P08_AddReviewPage(Hooks.driver);
 
 
         }

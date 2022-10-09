@@ -37,38 +37,7 @@
 
   <ItemGroup>
     <Folder Include="Common Locators\" />
-    <Folder Include="Runner\" />
-    <Folder Include="ScreenShots\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Update="Features\F04_SearchAutoComplete.feature.cs">
-      <DependentUpon>F04_SearchAutoComplete.feature</DependentUpon>
-    </Compile>
-    <Compile Update="Features\F01_Register.feature.cs">
-      <DependentUpon>F01_Register.feature</DependentUpon>
-    </Compile>
-    <Compile Update="Features\F07_WishList .feature.cs">
-      <DependentUpon>F07_WishList .feature</DependentUpon>
-    </Compile>
-    <Compile Update="Features\F10_EmailAFreind.feature.cs">
-      <DependentUpon>F10_EmailAFreind.feature</DependentUpon>
-    </Compile>
-    <Compile Update="Features\F09_AddReview.feature.cs">
-      <DependentUpon>F09_AddReview.feature</DependentUpon>
-    </Compile>
-    <Compile Update="Features\F08_AddProductToCart.feature.cs">
-      <DependentUpon>F08_AddProductToCart.feature</DependentUpon>
-    </Compile>
-    <Compile Update="Features\F05_HoverCategiries.feature.cs">
-      <DependentUpon>F05_HoverCategiries.feature</DependentUpon>
-    </Compile>
-    <Compile Update="Features\F03_ChangeCurrency.feature.cs">
-      <DependentUpon>F03_ChangeCurrency.feature</DependentUpon>
-    </Compile>
-    <Compile Update="Features\F06_FollowUs.feature.cs">
-      <DependentUpon>F06_FollowUs.feature</DependentUpon>
-    </Compile>
+    <Folder Include="Reports\" />
   </ItemGroup>
 
   <ItemGroup>

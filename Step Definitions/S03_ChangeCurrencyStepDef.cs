@@ -11,14 +11,14 @@ using Constants = SpecFlowBasics.data.Constants;
 namespace SpecFlowBasics.StepDefinitions
 {
     [Binding]
-    public class ChangeCurrencyStepDef
+    public class S03_ChangeCurrencyStepDef
     {
-        HomePage _homeObject;
+        P03_HomePage _homeObject;
         CommonLocators _commonObject;
 
-        public ChangeCurrencyStepDef(IWebDriver driver)
+        public S03_ChangeCurrencyStepDef(IWebDriver driver)
         {
-            this._homeObject = new HomePage(Hooks.driver);
+            this._homeObject = new P03_HomePage(Hooks.driver);
             this._commonObject = new CommonLocators(Hooks.driver);
         }
 
@@ -26,20 +26,19 @@ namespace SpecFlowBasics.StepDefinitions
         public void GivenUserClicksOnDropList()
         {
             _commonObject.ClickChangeCurrency();
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(15);
         }
 
         [When(@"User clicks on Euro")]
         public void WhenUserClicksOnEuro()
         {
-            _homeObject.UserChooserEuro();
+            _commonObject.UserChooserEuro();
         }
 
         [Then(@"User find the price of products in Euro")]
         public void ThenUserFindThePriceOfProductsInEuro()
         {
          Hooks.driver.Navigate().GoToUrl("https://demo.nopcommerce.com/desktops");
-         IList<IWebElement> Currency = _homeObject.Currency;
+         IList<IWebElement> Currency = _commonObject.Currency;
          int count = Currency.Count;
          Console.WriteLine("num of elements: "+ count);
 

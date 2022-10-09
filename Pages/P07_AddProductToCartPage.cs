@@ -2,9 +2,9 @@
 using SpecFlowBasics.Helpers;
 
 
-public class AddProductToCartPage : PageBase
+public class P07_AddProductToCartPage : PageBase
 {
-    public AddProductToCartPage(IWebDriver driver) : base(driver)
+    public P07_AddProductToCartPage(IWebDriver driver) : base(driver)
     {
     }
 

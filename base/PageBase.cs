@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Support.Extensions;
 using OpenQA.Selenium.Support.UI;
 
 namespace SpecFlowBasics.Helpers;
@@ -33,5 +34,7 @@ public class PageBase
     {
         //jse.ExecuteScript(ScrollPageToBottom(0, 2500));
     }
+
+   
 
 }

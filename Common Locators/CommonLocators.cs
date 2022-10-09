@@ -24,6 +24,8 @@ public class CommonLocators : PageBase
     public const String WishListLinkID = "a[href=\"/wishlist\"]";
     public const String ChangeCurancyID = "customerCurrency";
     public const String ResultMsgID = "div.result";
+    public const String CurrencyID = "div.prices";
+    public const String LogOutID = "a.ico-logout";
 
 
 
@@ -42,6 +44,10 @@ public class CommonLocators : PageBase
     IWebElement WishListBtn => driver.FindElement(By.Id(WishLisBtnID));
     IWebElement ChangeCurrency => driver.FindElement(By.Id(ChangeCurancyID));
     public IWebElement ResultMsg => driver.FindElement(By.CssSelector(ResultMsgID));
+    public IList<IWebElement> Currency => driver.FindElements(By.CssSelector(CurrencyID));
+    public IWebElement LogOutLink => driver.FindElement(By.CssSelector(LogOutID));
+
+
 
 
 
@@ -92,9 +98,19 @@ public class CommonLocators : PageBase
     {
         Select = new SelectElement(ChangeCurrency);
     }
+    public void UserChooserEuro()
+    {
+        Select.SelectByText("Euro");
+    }
 
     public void ClickAddCart()
     {
         ClickBtn(AddToCartBtn);
     }
+
+    public void UserLogOut()
+    {
+        ClickBtn(LogOutLink);
+    }
+
 }

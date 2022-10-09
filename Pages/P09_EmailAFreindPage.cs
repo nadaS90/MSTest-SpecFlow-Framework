@@ -3,9 +3,9 @@ using SpecFlowBasics.Helpers;
 
 namespace SpecFlowBasics.Pages;
 
-public class EmailAFreindPage : PageBase
+public class P09_EmailAFreindPage : PageBase
     {
-    public EmailAFreindPage(IWebDriver driver) : base(driver)
+    public P09_EmailAFreindPage(IWebDriver driver) : base(driver)
     {
     }
 

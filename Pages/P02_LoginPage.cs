@@ -2,9 +2,9 @@
 using SpecFlowBasics.Helpers;
 namespace SpecFlowBasics.Pages;
 
-public class LoginPage : PageBase
+public class P02_LoginPage : PageBase
 {
-    public LoginPage(IWebDriver driver) : base(driver)
+    public P02_LoginPage(IWebDriver driver) : base(driver)
     {
     }
 

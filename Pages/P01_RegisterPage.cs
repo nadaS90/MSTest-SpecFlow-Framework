@@ -2,10 +2,10 @@
 using SpecFlowBasics.Helpers;
 namespace SpecFlowBasics.Pages;
 
-public class RegisterPage : PageBase
+public class P01_RegisterPage : PageBase
 
 {
-    public RegisterPage(IWebDriver driver) : base(driver)
+    public P01_RegisterPage(IWebDriver driver) : base(driver)
     {
     }
 

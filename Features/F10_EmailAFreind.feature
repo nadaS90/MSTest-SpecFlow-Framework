@@ -1,9 +1,9 @@
-﻿Feature: Send to friend Feature
+﻿Feature: F10_Send to friend Feature
 
 @smoke
  Scenario: User send product to a friend 
- Given User Register to the system
- Then User search for a product
+ Given user login with valid email and password
+ And User search for a product
  When User Add a friend e-mail and send
  Then successful Msg appears
    

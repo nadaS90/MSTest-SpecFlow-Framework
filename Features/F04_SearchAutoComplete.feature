@@ -1,4 +1,4 @@
-﻿Feature: Search auto complete Feature
+﻿Feature: F04_Search auto complete Feature
 
 @smoke
  Scenario: User can search products using autocoplete

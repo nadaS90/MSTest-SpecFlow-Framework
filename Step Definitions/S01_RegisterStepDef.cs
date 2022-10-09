@@ -12,16 +12,17 @@ using static SpecFlowBasics.HooksInitialization.Hooks;
 namespace SpecFlowBasics.StepDefinitions
 {
     [Binding]
-    public class RegisterStepDef
+
+    public class S01_RegisterStepDef
     {
-        RegisterPage _registerObject;
+        P01_RegisterPage _registerObject;
         CommonLocators _commonObject;
 
         static string RegisteredEmail = "";
 
-        public RegisterStepDef(IWebDriver driver)
+        public S01_RegisterStepDef(IWebDriver driver)
         {
-            this._registerObject = new RegisterPage(Hooks.driver);
+            this._registerObject = new P01_RegisterPage(Hooks.driver);
             this._commonObject = new CommonLocators(Hooks.driver);
         }
 

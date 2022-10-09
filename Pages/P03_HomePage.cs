@@ -7,12 +7,12 @@ using SpecFlowBasics.Helpers;
 using SpecFlowBasics.HooksInitialization;
 
 namespace SpecFlowBasics.Pages; 
-public class HomePage : PageBase
+public class P03_HomePage : PageBase
 {
     //private static IWebDriver driver;
     public String RegisteredEmail { get; set; }
 
-    public HomePage(IWebDriver driver) : base(driver)
+    public P03_HomePage(IWebDriver driver) : base(driver)
     {
     }
 
@@ -23,8 +23,6 @@ public class HomePage : PageBase
     public const String FaceBookLinkID = "//a[@href=\"http://www.facebook.com/nopCommerce\"]";
     public const string TwitterLinkID = "//a[@href=\"https://twitter.com/nopCommerce\"]";
     public const String YouTubeLinkID = "//a[@href=\"http://www.youtube.com/user/nopCommerce\"]";
-    public const String LogOutID = "a.ico-logout";
-    public const String CurrencyID = "div.prices";
     public const String WishListProductID = "a[href=\"/htc-one-m8-android-l-50-lollipop\"]";
 
     #endregion
@@ -35,21 +33,13 @@ public class HomePage : PageBase
     IWebElement FaceBook => driver.FindElement(By.XPath(FaceBookLinkID)); 
     IWebElement Twitter => driver.FindElement(By.XPath(TwitterLinkID)); 
     IWebElement YouTube => driver.FindElement(By.XPath(YouTubeLinkID));
-    public IWebElement LogOutLink => driver.FindElement(By.CssSelector(LogOutID));
-    public IList<IWebElement> Currency => driver.FindElements(By.CssSelector(CurrencyID));
     public IWebElement WishListProduct => driver.FindElement(By.CssSelector(WishListProductID)); 
   
 
 
 
 
-   
-   
-
-     public void UserChooserEuro()
-     {
-         Select.SelectByText("Euro");
-     }
+    
 
     public void HoverMenuAndSelectCategory()
      {
@@ -72,10 +62,6 @@ public class HomePage : PageBase
      public void UserNavigateToYouTube()
      {
          ClickBtn(YouTube);
-     }
-     public void UserLogOut()
-     {
-         ClickBtn(LogOutLink);
      }
 
      public void SelectProductToWishList()

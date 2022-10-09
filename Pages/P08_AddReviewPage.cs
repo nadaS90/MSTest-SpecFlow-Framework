@@ -3,9 +3,9 @@ using SpecFlowBasics.Helpers;
 
 namespace SpecFlowBasics.Pages;
 
-public class AddReviewPage : PageBase
+public class P08_AddReviewPage : PageBase
 {
-    public AddReviewPage(IWebDriver driver) : base(driver)
+    public P08_AddReviewPage(IWebDriver driver) : base(driver)
     {
     }
 

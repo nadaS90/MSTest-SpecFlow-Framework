@@ -1,4 +1,4 @@
-﻿Feature: Hover Feature
+﻿Feature: F05_Hover Feature
 
 @smoke
  Scenario: guest user could hover categories successfully

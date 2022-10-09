@@ -12,44 +12,47 @@ using Constants = SpecFlowBasics.data.Constants;
 namespace SpecFlowBasics.StepDefinitions
 {
     [Binding]
-    public class LoginStepDef
+    public class S02_LoginStepDef
     {
-        HomePage _homeObject;
-        LoginPage _loginObject;
+        P03_HomePage _homeObject;
+        P02_LoginPage _loginObject;
         CommonLocators _commonObject;
 
 
-        public LoginStepDef(IWebDriver driver)
+        public S02_LoginStepDef(IWebDriver driver)
         {
-            this._homeObject = new HomePage(Hooks.driver);
-            this._loginObject = new LoginPage(Hooks.driver);
+            this._homeObject = new P03_HomePage(Hooks.driver);
+            this._loginObject = new P02_LoginPage(Hooks.driver);
             this._commonObject = new CommonLocators(Hooks.driver);
         }
 
 
-        [Given(@"user go to login page")]
+      /*  [Given(@"user go to login page")]
         public void GivenUserGoToLoginPage()
         {
-            _commonObject.ClickLoginPage();
-        }
+        } */
 
         [Given(@"user login with valid email and password")]
         public void GivenUserLoginWithValidEmailAndPassword()
         {
+            _commonObject.ClickLoginPage();
             _loginObject.UserEnterEmailAndPassword(Constants.Email, Constants.Password);
+            _loginObject.UserLogIn();
+
         }
 
 
         [Then(@"user login to the system successfully")]
         public void ThenUserLoginToTheSystemSuccessfully()
         {
-            _loginObject.UserLogIn();
+            Assert.IsTrue(_commonObject.LogOutLink.Displayed);
+
         }
 
         [When(@"user logout the system")]
         public void WhenUserLogoutTheSystem()
         {
-            _homeObject.UserLogOut();
+            _commonObject.UserLogOut();
 
         }
 

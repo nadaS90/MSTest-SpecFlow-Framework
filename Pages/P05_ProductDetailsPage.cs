@@ -2,9 +2,9 @@
 using SpecFlowBasics.Helpers;
 
 
-public class ProductDetailsPage : PageBase
+public class P05_ProductDetailsPage : PageBase
 {
-    public ProductDetailsPage(IWebDriver driver) : base(driver)
+    public P05_ProductDetailsPage(IWebDriver driver) : base(driver)
     {
     }
 

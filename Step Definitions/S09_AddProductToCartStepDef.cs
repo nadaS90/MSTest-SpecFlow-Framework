@@ -9,20 +9,20 @@ using TechTalk.SpecFlow;
 namespace SpecFlowBasics
 {
     [Binding]
-    public class AddProductToCartStepDef
+    public class S09_AddProductToCartStepDef
     {
         
         CommonLocators _commonObject;
-        SearchProductPage _searchObject;
-        ProductDetailsPage _detailsObject;
-        AddProductToCartPage _cartObject;
+        P04_SearchProductPage _searchObject;
+        P05_ProductDetailsPage _detailsObject;
+        P07_AddProductToCartPage _cartObject;
 
-        public AddProductToCartStepDef(IWebDriver driver)
+        public S09_AddProductToCartStepDef(IWebDriver driver)
         {
             this._commonObject = new CommonLocators(Hooks.driver);
-            this._searchObject = new SearchProductPage(Hooks.driver);
-            this._detailsObject = new ProductDetailsPage(Hooks.driver);
-            this._cartObject = new AddProductToCartPage(Hooks.driver);
+            this._searchObject = new P04_SearchProductPage(Hooks.driver);
+            this._detailsObject = new P05_ProductDetailsPage(Hooks.driver);
+            this._cartObject = new P07_AddProductToCartPage(Hooks.driver);
 
         }
         [Given(@"User search for a product")]

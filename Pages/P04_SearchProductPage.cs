@@ -4,9 +4,9 @@ using SpecFlowBasics.Helpers;
 using System.Linq;
 
 
-public class SearchProductPage : PageBase
+public class P04_SearchProductPage : PageBase
 {
-    public SearchProductPage(IWebDriver driver) : base(driver)
+    public P04_SearchProductPage(IWebDriver driver) : base(driver)
     {
     }
 

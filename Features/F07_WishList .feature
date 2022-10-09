@@ -1,4 +1,4 @@
-﻿Feature: Wishist Feature
+﻿Feature: F07_Wishist Feature
 
 @smoke
  Scenario: User selects product to add to wishist

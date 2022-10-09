@@ -4,9 +4,9 @@ using SpecFlowBasics.Helpers;
 
 namespace SpecFlowBasics.Pages;
 
-public class WishListPage : PageBase
+public class P06_WishListPage : PageBase
 {
-    public WishListPage(IWebDriver driver) : base(driver)
+    public P06_WishListPage(IWebDriver driver) : base(driver)
     {
     }
 

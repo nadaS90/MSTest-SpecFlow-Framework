@@ -1,4 +1,4 @@
-﻿Feature: FollowUs Feature
+﻿Feature: F06_FollowUs Feature
 
 @smoke
  Scenario: User opens facebook link
